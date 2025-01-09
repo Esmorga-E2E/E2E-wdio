@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "npm run wdio:android ; npm run wdio:ios",
+    "wdio:android": "wdio run ./config/android_wdio.conf.js",
+    "wdio:ios": "wdio run ./config/ios_wdio.conf.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +22,7 @@
     "@wdio/mocha-framework": "^9.5.0",
     "@wdio/visual-service": "^6.3.0",
     "appium-uiautomator2-driver": "^3.9.7",
+    "appium-xcuitest-driver": "^7.35.1",
     "wdio": "^6.0.1",
     "wdio-mochawesome-reporter": "^6.1.1",
     "wdio-wait-for": "^3.0.11"
