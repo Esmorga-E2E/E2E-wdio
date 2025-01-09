@@ -18,6 +18,7 @@ exports.basic_config = {
     },
     exclude: [    ],
     maxInstances: 10,
+//    logLevel: 'error',
     logLevel: 'info',
     bail: 0,
     waitforTimeout: 10000,
@@ -25,7 +26,8 @@ exports.basic_config = {
     connectionRetryCount: 3,
 
     framework: 'mocha',
-    reporters: [['allure', {outputDir: 'allure-results'}],'mochawesome'],
+    reporters: [],
+    //['allure', {outputDir: 'allure-results'}],'mochawesome'],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
