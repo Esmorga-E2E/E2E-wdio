@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "wdio": "npm run wdio:android ; npm run wdio:ios",
+    "wdio": "npm run wdio:android && npm run wdio:ios",
     "wdio:android": "wdio run ./config/android_wdio.conf.js",
     "wdio:ios": "wdio run ./config/ios_wdio.conf.js"
   },

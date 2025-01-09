@@ -12,5 +12,11 @@ class WellcomePage extends Page {
         }
 
     }
+    tap_login () {
+        return super.tap_primary()
+    }
+    tap_guest () {
+        return super.tap_secondary()
+    }
 }
 module.exports = new WellcomePage();
