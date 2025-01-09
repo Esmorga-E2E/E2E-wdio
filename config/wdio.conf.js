@@ -1,13 +1,21 @@
 exports.basic_config = {
-    runner: 'local',
-    port: 4723,
-  
-    user: process.env.BROWSERSTACK_USERNAME,
-    key: process.env.BROWSERSTACK_ACCESS_KEY,
+//    runner: 'local',
+//    port: 4723,
+    user: process.env.BROWSERSTACK_USERNAME || 'BROWSERSTACK_USERNAME',
+    key: process.env.BROWSERSTACK_ACCESS_KEY || 'BROWSERSTACK_ACCESS_KEY',
+    hostname: 'hub.browserstack.com',
     specs: [
         '../test/specs/**/*.js'
     ],
-
+    commonCapabilities: {
+      'bstack:options': {
+        debug: true,
+        networkLogs: true,
+        appiumVersion: '2.0',
+      },
+      "appium:disableWindowAnimation": true,
+      "appium:reduceMotion": true
+    },
     exclude: [    ],
     maxInstances: 10,
     logLevel: 'info',

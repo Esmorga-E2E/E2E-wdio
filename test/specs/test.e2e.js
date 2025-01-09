@@ -1,16 +1,10 @@
 const { expect } = require('@wdio/globals')
-const LoginPage = require('../pageobjects/login.page')
-const SecurePage = require('../pageobjects/secure.page')
+const WellcomePage = require('../pageobjects/wellcome.page')
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
-        await LoginPage.open()
-
-        await LoginPage.login('tomsmith', 'SuperSecretPassword!')
-        await expect(SecurePage.flashAlert).toBeExisting()
-        await expect(SecurePage.flashAlert).toHaveText(
-            expect.stringContaining('You logged into a secure area!'))
-        await expect(SecurePage.flashAlert).toMatchElementSnapshot('flashAlert')
-    })
+describe('Test', () => {
+    it('Run app Test', async () => {
+//        await WellcomePage.open()
+        await expect(WellcomePage.screenUnicObject).toBeDisplayed()
+   })
 })
 
